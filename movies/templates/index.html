@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Películas{% endblock %}
+{% block content %}
+<h2 class="mb-3">Las Mejores Películas</h2>
+<ul class="list-group">
+    {% for movie in movies %}
+        <a href="{% url 'movies:movie' movie.id %}" 
+           class="list-group-item list-group-item-action">
+            {{ movie.title }} - {{ movie.publication_year }}
+        </a>
+    {% endfor %}
+</ul>
+{% endblock %}
